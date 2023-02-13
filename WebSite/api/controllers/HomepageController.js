@@ -10,10 +10,10 @@ module.exports = {
         res.view('checklist');
     }, 
     academic: function(req,res){
-        res.view('academic');
+        res.view('academic_resources');
     },
     campus: function(req, res){
-        res.view('campus');
+        res.view('campus_resources');
     }
 
 };

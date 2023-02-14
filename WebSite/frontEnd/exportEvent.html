@@ -1,0 +1,84 @@
+<html>
+    <body>
+
+        <!-- Create CSV File -->
+        <table id="dataTable" class="table">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Start Date</th>
+                    <th>Start Time</th>
+                    <th>End Date</th>
+                    <th>End Time</th>
+                    <th>All Day Event</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Private</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Workshop</td>
+                    <td>02/11/23</td>
+                    <td>1:00 PM</td>
+                    <td>02/11/23</td>
+                    <td>2:00 PM</td>
+                    <td>FALSE</td>
+                    <td>There is a workshop</td>
+                    <td>Online</td>
+                    <td>FALSE</td>
+                </tr>
+                <tr>
+                    <td>COUP Event</td>
+                    <td>02/11/23</td>
+                    <td>5:00 PM</td>
+                    <td>02/11/23</td>
+                    <td>8:00 PM</td>
+                    <td>FALSE</td>
+                    <td>Party Time</td>
+                    <td>Online</td>
+                    <td>FALSE</td>
+                </tr>
+                <tr>
+                    <td>Soccer Game</td>
+                    <td>02/11/23</td>
+                    <td>9:00 PM</td>
+                    <td>02/11/23</td>
+                    <td>10:00 PM</td>
+                    <td>FALSE</td>
+                    <td>Barcelon VS Real Madrid</td>
+                    <td>Online</td>
+                    <td>FALSE</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="btnExportToCsv" type="button" class="button">Export to CSV</button>
+        <script src="js/TableCSVExporter.js"> </script>
+        <script>
+            const dataTable = document.getElementById("dataTable");
+            const btnExportToCsv = document.getElementById("btnExportToCsv");
+    
+            btnExportToCsv.addEventListener("click", () => {
+                const exporter = new TableCSVExporter(dataTable);
+                const csvOutput = exporter.convertToCSV();
+                const csvBlob = new Blob([csvOutput], { type: "text/csv" });
+                const blobUrl = URL.createObjectURL(csvBlob);
+                const anchorElement = document.createElement("a");
+    
+                anchorElement.href = blobUrl;
+                anchorElement.download = "table-export.csv";
+                anchorElement.click();
+    
+                setTimeout(() => {
+                    URL.revokeObjectURL(blobUrl);
+                }, 500);
+            });
+        </script>
+
+        <!-- Import to Google Calendar -->
+        <button type="button">
+            <a href="https://calendar.google.com/calendar/u/0/r/settings/export">Import to Google Calendar</a>
+        </button>
+
+    </body>
+</html>

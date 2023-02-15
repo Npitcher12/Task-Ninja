@@ -1,0 +1,117 @@
+*{
+    background-color: #f9f9f9;
+}
+.schedBox{
+   /* box-sizing: border-box;*/
+    display: flex;
+    flex-direction: column; 
+    width: 60%;
+    float: left;
+    
+
+}
+body {font-family: arial, sans-serif;}
+
+
+/* Style the tab */
+.schedTab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #0000FF;
+}
+
+
+/* Style the buttons inside the tab */
+.schedTab button {
+  background-color: #0000FF;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+
+/* Change background color of buttons on hover */
+.schedTab button:hover {
+    background-color: #00269b;
+  }
+  
+  
+  /* Create an active/current "tab button" class */
+  .schedTab button.active {
+    background-color: #00269b;
+  }
+  
+  
+  /* Style the schedule tab content */
+  .schedTabcontent {
+    display: flex;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #f7fbfd;
+    height: 300px;
+  }
+  
+  
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width:100%;
+     
+    }
+
+
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    width:50%;
+    font-size: 18px;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    width:50%;
+    font-size: 15px;
+}
+   
+
+  
+.hrEventLine{
+    position: relative;
+  /*  left: -15px; */
+    width: 100%; 
+    
+    /*border: 2px solid blue;*/
+}
+
+.calForm { /*styling for the calendar form*/
+    padding-top: 50px;
+    padding-right: 20px;
+
+    float: right;
+  }
+
+input[type=submit]{
+    background-color: #00269b;
+    color: white;
+    cursor: pointer;
+    
+  }
+
+.newClassButton{
+    background-color: #00269b;
+    border:#00269b;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    padding: 15px 32px;
+}
+

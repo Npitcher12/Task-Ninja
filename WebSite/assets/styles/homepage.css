@@ -36,9 +36,13 @@ body {font-family: arial, sans-serif;}
 
 .exportButton{
   background-color: #0000FF;
+  border:#0000FF;
   color: white;
+  border: none;
+  outline: none;
   float: right;
   cursor: pointer;
+  padding: 5px 5px;
 }
 
 

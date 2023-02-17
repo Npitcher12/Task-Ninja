@@ -34,6 +34,13 @@ body {font-family: arial, sans-serif;}
   font-size: 17px;
 }
 
+.exportButton{
+  background-color: #0000FF;
+  color: white;
+  float: right;
+  cursor: pointer;
+}
+
 
 /* Change background color of buttons on hover */
 .schedTab button:hover {

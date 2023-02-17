@@ -19,7 +19,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+  '/': { view: 'pages/scheduler' },
+  '/checklist': { view: 'pages/checklist'},
+  '/campus_resources': { view: 'pages/campus_resources'},
+  '/academic_resources': { view: 'pages/academic_resources'},
+
 
 
   /***************************************************************************

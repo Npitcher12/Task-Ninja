@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body{
     background-color: #f9f9f9;
 }
@@ -126,3 +129,62 @@ input[type=submit]{
     padding: 15px 32px;
 }
 
+/*New Stuff*/
+.addEventPopup {
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+.addEventFormPopup {
+  display: none;
+  position: fixed; 
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #0000FF;
+  z-index: 9;
+}
+.addEventFormContainer {
+ /* max-width: 300px;*/
+  padding: 20px;
+  background-color: #fff;
+
+
+}
+
+.addEventFormContainer input[type=text] {
+  width: 50%;
+  padding: 15px;
+  margin: 10px;
+  border: none;
+  background: #eee;
+}
+
+.addEventFormContainer input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+.eventFormContainer .btn:hover,
+.openButton:hover {
+  opacity: 1;
+}
+
+.radioButtonAlign{
+  vertical-align: middle;
+}
+
+.eventTime{
+  position: relative;
+}
+
+.endButton{
+  background-color: #0000FF;
+  border:#0000FF;
+  color: white;
+  border-color: white;
+  outline: solid;
+  float: right;
+  cursor: pointer;
+  padding: 5px 5px;
+}

@@ -72,7 +72,7 @@
 </div>
 <div class="calForm">
   <form action="/action_page.php"> <!--This may need to be changed to get info from the form-->
-    <label for="Select Date">Select Date: </label>
+    <label for="schedDate">Select Date: </label>
     <input type="date" id="schedDate" name="schedDate">
     <input type="submit">
   </form>
@@ -82,11 +82,73 @@
   <br>
   <br>
 
-  <button class="newClassButton" id="newEvent" type="button">Add New Class or Event</button>
+  <button class="newClassButton" onclick="openAddEventForm()" id="newEvent" type="button">Add New Class or Event</button>
   <br>
   <br>
-  <button class="newClassButton" id="removeEvent" type="button">Remove Class or Event</button>
+  <button class="newClassButton" onclick="openRemoveEventForm()" id="removeEvent" type="button">Remove Class or Event</button>
 </div>
 
+<div class="addEventPopup">
+  <div class="addEventFormPopup" id="addEventForm">
+    <form action="/action_page.php" class="addEventFormContainer">
+      <h2>New Class or Event</h2>
+      <hr>
+
+      <label for="newEventDate">
+        <strong>Select Date: </strong>
+      </label>
+      <input type="date" id="newEventDate" name="newEventDate" required>
+
+      <br>
+      <label for="eventName">
+        <strong>Event Name</strong>
+      </label>
+      <input type="text" id="eventName" placeholder="Event Name" name="eventName" required>
+      
+      <br>
+      <!--Radio button for selecting all day event-->
+      <input class = "allDayEvent" type="checkbox" id="allDayEvent" name="allDayEvent" value="All Day Event" ">
+      <label for="allDayEvent">All Day Event</label><br>
+
+      <br>
+      <!--Start and end times if all day event isnt selected-->
+      <div class="eventTime" id="eventTime">
+        <label for="startTime"><strong>Start Time: </strong></label>
+        <input type="time" id="startTime" name="startTime"
+       min="09:00" max="18:00" required>
+       
+
+
+       <label for="endTime"><strong>End Time: </strong></label>
+       <input type="time" id="endTime" name="endTime"
+      min="09:00" max="18:00" required>
+      </div>
+
+      <!--Radio buttons for whether it reoccurs-->
+      <br>
+      <p><strong>Select how often the event reoccurs: </strong></p>
+      <div class="radioButtonAlign">
+        <input type="radio" id="notReoccur" name="reoccur" value="NotReoccuring">
+        <label for="notReoccur">Not Reoccuring</label><br>
+        
+        <input type="radio" id="dailyReoccur" name="reoccur" value="Daily">
+        <label for="dailyReoccur">Daily</label><br>
+        
+        <input type="radio" id="weeklyReoccur" name="reoccur" value="Weekly">
+        <label for="weeklyReoccur">Weekly</label><br>
+        
+        <input type="radio" id="monthlyReoccur" name="reoccur" value="Monthly">
+        <label for="monthlyReoccur">Monthly</label><br>
+      </div>
+
+      <!--cancel and submit event buttons-->
+      <br>
+      <button type="submit" class="endButton">Submit</button>
+      <button type="button" class="endButton" onclick="closeForm()">Cancel</button>
+      <br>
+    </form>
+
+    </div>
+</div>
 </body>
 </html> 

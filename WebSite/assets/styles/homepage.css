@@ -188,3 +188,44 @@ input[type=submit]{
   cursor: pointer;
   padding: 5px 5px;
 }
+
+/*beginning of remove event form formatting*/
+.removeEventPopup {
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+.removeEventFormPopup {
+  display: none;
+  position: fixed; 
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #0000FF;
+  z-index: 9;
+}
+.removeEventFormContainer {
+ /* max-width: 300px;*/
+  padding: 20px;
+  background-color: #fff;
+
+
+}
+
+.removeEventFormContainer input[type=text] {
+  width: 50%;
+  padding: 15px;
+  margin: 10px;
+  border: none;
+  background: #eee;
+}
+
+.removeEventFormContainer input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+.removeEventFormContainer .btn:hover,
+.openButton:hover {
+  opacity: 1;
+}

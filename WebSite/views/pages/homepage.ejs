@@ -1,2 +1,197 @@
-<!--Homepage for the Task Ninja (should be the schedule page)-->
-TEST
+<!DOCTYPE html> <!--https://www.w3schools.com/howto/howto_js_vertical_tabs.asp-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>My Schedule</h2>
+
+<div class="schedBox">
+  <div class="schedTab">
+    <button class="schedTablinks" onclick="openScheduleTab(event, 'day')" id="defaultOpen">Day</button>
+    <button class="schedTablinks" onclick="openScheduleTab(event, 'month')">Month</button>
+    <button class="schedTablinks" onclick="openScheduleTab(event, 'year')">Year</button>
+  </div>
+
+  <div id="day" class="schedTabcontent">
+    <table id = "daySched">
+        <tr>
+          <th>Time</th>
+          <th>Event</th>
+          
+        </tr>
+        <!--tr>
+          <td>9-10:00</td>
+          <td>Software Engineering</td>
+        </tr-->
+
+      </table>
+    
+      <br> <!--Line Break for spacing-->
+    <h4 id = "allDayEvent">All Day Events</h3>
+      <hr class="hrEventLine">
+      <ul id = allDayEventList>
+        <!--Room for all day events in bullet points-->
+        
+      </ul> 
+      <br> <!--Line Break for spacing-->
+      <br>
+      <button class="exportButton" id="export" type="button">Export</button>
+      
+  </div>
+
+  <div id="month" class="schedTabcontent">
+    <table id = monthSched>
+        <tr>
+          <th>Day</th>
+          <th>Event</th>
+        </tr>
+
+      </table>
+
+      <br> <!--Line Break for spacing-->
+      <br>
+      <button class="exportButton" id="export" type="button">Export</button>
+  </div>
+
+  <div id="year" class="schedTabcontent">
+    <table id = yearSched>
+        <tr>
+          <th>Day</th>
+          <th>Event</th>
+        </tr>
+
+      </table>
+
+      <br> <!--Line Break for spacing-->
+      <br>
+      <button class="exportButton" id="export" type="button">Export</button>
+  </div> 
+
+</div>
+<div class="calForm">
+  <form action="/action_page.php"> <!--This may need to be changed to get info from the form-->
+    <label for="schedDate">Select Date: </label>
+    <input type="date" id="schedDate" name="schedDate">
+    <input type="submit">
+  </form>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <button class="newClassButton" onclick="openAddEventForm()" id="newEvent" type="button">Add New Class or Event</button>
+  <br>
+  <br>
+  <button class="newClassButton" onclick="openRemoveEventForm()" id="removeEvent" type="button">Remove Class or Event</button>
+</div>
+
+<div class="addEventPopup">
+  <div class="addEventFormPopup" id="addEventForm">
+    <form action="/action_page.php" class="addEventFormContainer">
+      <h2>New Class or Event</h2>
+      <hr>
+
+      <label for="newEventDate">
+        <strong>Select Date: </strong>
+      </label>
+      <input type="date" id="newEventDate" name="newEventDate" required>
+
+      <br>
+      <label for="eventName">
+        <strong>Event Name</strong>
+      </label>
+      <input type="text" id="eventName" placeholder="Event Name" name="eventName" required>
+      
+      <br>
+      <!--Radio button for selecting all day event-->
+      <input class = "allDayEvent" type="checkbox" id="allDayEvent" name="allDayEvent" value="All Day Event" ">
+      <label for="allDayEvent">All Day Event</label><br>
+
+      <br>
+      <!--Start and end times if all day event isnt selected-->
+      <div class="eventTime" id="eventTime">
+        <label for="startTime"><strong>Start Time: </strong></label>
+        <input type="time" id="startTime" name="startTime"
+       min="09:00" max="18:00">
+       
+
+
+       <label for="endTime"><strong>End Time: </strong></label>
+       <input type="time" id="endTime" name="endTime"
+      min="09:00" max="18:00">
+      </div>
+
+      <!--Radio buttons for whether it reoccurs-->
+      <br>
+      <p><strong>Select how often the event reoccurs: </strong></p>
+      <div class="radioButtonAlign">
+        <input type="radio" id="notReoccur" name="reoccur" value="NotReoccuring">
+        <label for="notReoccur">Not Reoccuring</label><br>
+        
+        <input type="radio" id="dailyReoccur" name="reoccur" value="Daily">
+        <label for="dailyReoccur">Daily</label><br>
+        
+        <input type="radio" id="weeklyReoccur" name="reoccur" value="Weekly">
+        <label for="weeklyReoccur">Weekly</label><br>
+        
+        <input type="radio" id="monthlyReoccur" name="reoccur" value="Monthly">
+        <label for="monthlyReoccur">Monthly</label><br>
+      </div>
+
+      <!--cancel and submit event buttons-->
+      <br>
+      <button type="submit" class="endButton">Submit</button>
+      <button type="button" class="endButton" onclick="closeForm()">Cancel</button>
+      <br>
+    </form>
+
+    </div>
+</div>
+
+<!--beginning of new pop up code-->
+<div class="removeEventPopup">
+  <div class="removeEventFormPopup" id="removeEventForm">
+    <form action="/action_page.php" class="removeEventFormContainer">
+      <h2>Remove Class or Event</h2>
+      <hr>
+
+      <label for="removeEventDate">
+        <strong>Select Date: </strong>
+      </label>
+      <input type="date" id="removeEventDate" name="removeEventDate" required>
+      <br>
+      <br>
+      <label for="cars">
+        <strong>Select an Event:</strong></label>
+
+      <select id="removeSchedEvents">
+        <!--Space to add schedule events from that day via drop down form-->
+        <option value="selectExample">Example Event</option>
+      </select>
+
+      <br>
+      <br>
+
+      <div class="radioButtonAlign">
+        <input type="radio" id="onlyThisEvent" name="removeReoccur" value="onlyThisEvent">
+        <label for="onlyThisEvent">Delete only this event</label><br>
+        
+        <input type="radio" id="futureEvents" name="removeReoccur" value="removeFutureEvents">
+        <label for="futureEvents">Delete this event and its reoccurances</label><br>
+
+      </div>
+
+      <!--cancel and submit event buttons-->
+      <br>
+      <button type="submit" class="endButton">Submit</button>
+      <button type="button" class="endButton" onclick="closeForm()">Cancel</button>
+      <br>
+    </form>
+
+    </div>
+</div>
+</body>
+</html> 

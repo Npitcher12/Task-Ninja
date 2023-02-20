@@ -4,10 +4,9 @@ h1{
 
 .calendarA{
     padding:25px;
-    margin:auto;
-    display:block;
 }
 #calA{
+    display:block;
     margin:auto;
 }
 #textHeadingA{

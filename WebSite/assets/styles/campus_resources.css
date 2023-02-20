@@ -4,11 +4,11 @@ h1{
 
 .calendarC{
     padding:25px;
-    margin:auto;
-    display:block;
 }
 #calC{
+    display:block;
     margin:auto;
+    
 }
 #textHeadingC{
     padding-top:20px;

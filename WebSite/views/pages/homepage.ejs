@@ -15,13 +15,13 @@
   </div>
 
   <div id="day" class="schedTabcontent">
-    <table id = "daySched">
+    <table id = "dayDataTable">
         <tr>
           <th>Time</th>
           <th>Event</th>
           
         </tr>
-        <!--tr>
+        <tr>
           <td>9-10:00</td>
           <td>Software Engineering</td>
         </tr-->
@@ -33,11 +33,11 @@
       <hr class="hrEventLine">
       <ul id = allDayEventList>
         <!--Room for all day events in bullet points-->
-        
+        <!--li>Valentines Day</li-->
       </ul> 
       <br> <!--Line Break for spacing-->
       <br>
-      <button class="exportButton" id="export" type="button">Export</button>
+      <button class="exportButton" id="btnExportToCsv" type="button">Export</button>
       
   </div>
 
@@ -52,7 +52,7 @@
 
       <br> <!--Line Break for spacing-->
       <br>
-      <button class="exportButton" id="export" type="button">Export</button>
+      <button class="exportButton" id="btnExportToCsv" type="button">Export</button>
   </div>
 
   <div id="year" class="schedTabcontent">
@@ -66,12 +66,12 @@
 
       <br> <!--Line Break for spacing-->
       <br>
-      <button class="exportButton" id="export" type="button">Export</button>
+      <button class="exportButton" id="btnExportToCsv" type="button">Export</button>
   </div> 
 
 </div>
 <div class="calForm">
-  <form action="/action_page.php"> <!--This may need to be changed to get info from the form-->
+  <form action="/"> <!--This may need to be changed to get info from the form-->
     <label for="schedDate">Select Date: </label>
     <input type="date" id="schedDate" name="schedDate">
     <input type="submit">
@@ -143,7 +143,7 @@
 
       <!--cancel and submit event buttons-->
       <br>
-      <button type="submit" class="endButton">Submit</button>
+      <button type="submit" class="endButton" id="submitNewEvent" onclick="addNewEvent()"">Submit</button>
       <button type="button" class="endButton" onclick="closeForm()">Cancel</button>
       <br>
     </form>
@@ -193,5 +193,51 @@
 
     </div>
 </div>
+
+<script src="js/TableCSVExporter.js"> </script>
+        <script>
+            const dataTable = document.getElementById("dayDataTable");
+            const btnExportToCsv = document.getElementById("btnExportToCsv");
+    
+            btnExportToCsv.addEventListener("click", () => {
+                const exporter = new TableCSVExporter(dataTable);
+                const csvOutput = exporter.convertToCSV();
+                const csvBlob = new Blob([csvOutput], { type: "text/csv" });
+                const blobUrl = URL.createObjectURL(csvBlob);
+                const anchorElement = document.createElement("a");
+    
+                anchorElement.href = blobUrl;
+                anchorElement.download = "table-export.csv";
+                anchorElement.click();
+    
+                setTimeout(() => {
+                    URL.revokeObjectURL(blobUrl);
+                }, 500);
+            });
+        </script>
+        
 </body>
-</html> 
+</html>
+
+
+
+<!--script>
+      function addNewEvent(){
+       // var eventName = $("#newEventName").val();
+       // var eventDate = $("#newEventDate").val();
+       // var allDayEvent = $("#allDayEvent:checked").val();
+       // var startTime = $("#startTime").val();
+       // var endTime = $("#endTime").val();
+       // var reoccuring = $("#reoccuring:checked").val();
+    
+        var daySchede = document.getElementById("daySched");
+        var newRow = daySchede.insertRow(1);
+        var leftCell = daySchede.insertCell(0);
+        var rightCell = daySchede.insertCell(1);
+    
+        leftCell.innerHTML = "10";
+        rightCell.innerHTML = "new";
+    
+
+      }
+</script-->

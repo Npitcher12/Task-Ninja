@@ -38,7 +38,7 @@ module.exports = {
     },
     location: {
       type: 'string',
-      required: true,
+      required: false,
     },
     isPrivate: {
       type: 'boolean',

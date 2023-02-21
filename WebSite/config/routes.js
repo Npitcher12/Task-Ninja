@@ -19,7 +19,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/scheduler' },
+  '/': { view: 'pages/homepage' },
+  '/createEvent': { controller: 'SchedulePageController', action: 'createEvent', view: 'pages/homepage' },
+  '/removeEvent': { controller: 'SchedulePageController', action: 'removeEvent', view: 'pages/homepage' },
+  '/fetchEvents': { controller: 'SchedulePageController', action: 'fetchEvents', view: 'pages/homepage' },
+  '/fetchAllEvents': { controller: 'SchedulePageController', action: 'fetchAllEvents', view: 'pages/homepage' },
   '/checklist': { view: 'pages/checklist'},
   '/campus_resources': { view: 'pages/campus_resources'},
   '/academic_resources': { view: 'pages/academic_resources'},

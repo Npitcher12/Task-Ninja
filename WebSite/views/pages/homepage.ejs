@@ -90,24 +90,24 @@
 
 <div class="addEventPopup">
   <div class="addEventFormPopup" id="addEventForm">
-    <form action="/action_page.php" class="addEventFormContainer">
+    <form action="/createEvent" class="addEventFormContainer">
       <h2>New Class or Event</h2>
       <hr>
 
       <label for="newEventDate">
         <strong>Select Date: </strong>
       </label>
-      <input type="date" id="newEventDate" name="newEventDate" required>
+      <input type="date" id="newEventDate" name="eventDate" required>
 
       <br>
       <label for="eventName">
         <strong>Event Name</strong>
       </label>
-      <input type="text" id="eventName" placeholder="Event Name" name="eventName" required>
+      <input type="text" id="eventName" placeholder="Event Name" name="subject" required>
       
       <br>
       <!--Radio button for selecting all day event-->
-      <input class = "allDayEvent" type="checkbox" id="allDayEvent" name="allDayEvent" value="All Day Event" ">
+      <input class = "allDayEvent" type="checkbox" id="allDayEvent" name="allDayEvent">
       <label for="allDayEvent">All Day Event</label><br>
 
       <br>
@@ -128,16 +128,16 @@
       <br>
       <p><strong>Select how often the event reoccurs: </strong></p>
       <div class="radioButtonAlign">
-        <input type="radio" id="notReoccur" name="reoccur" value="NotReoccuring">
+        <input type="radio" id="notReoccur" name="reoccuring" value="NO">
         <label for="notReoccur">Not Reoccuring</label><br>
         
-        <input type="radio" id="dailyReoccur" name="reoccur" value="Daily">
+        <input type="radio" id="dailyReoccur" name="reoccuring" value="D">
         <label for="dailyReoccur">Daily</label><br>
         
-        <input type="radio" id="weeklyReoccur" name="reoccur" value="Weekly">
+        <input type="radio" id="weeklyReoccur" name="reoccuring" value="W">
         <label for="weeklyReoccur">Weekly</label><br>
         
-        <input type="radio" id="monthlyReoccur" name="reoccur" value="Monthly">
+        <input type="radio" id="monthlyReoccur" name="reoccuring" value="M">
         <label for="monthlyReoccur">Monthly</label><br>
       </div>
 
@@ -154,7 +154,7 @@
 <!--beginning of new pop up code-->
 <div class="removeEventPopup">
   <div class="removeEventFormPopup" id="removeEventForm">
-    <form action="/action_page.php" class="removeEventFormContainer">
+    <form action="/removeEvent" class="removeEventFormContainer">
       <h2>Remove Class or Event</h2>
       <hr>
 

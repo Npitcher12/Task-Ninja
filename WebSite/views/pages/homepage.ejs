@@ -14,12 +14,13 @@
     <button class="schedTablinks" onclick="openScheduleTab(event, 'year')">Year</button>
   </div>
 
+  <!--Day Event Table for the Scheduler -->
   <div id="day" class="schedTabcontent">
     <table id = "daySched">
         <tr>
           <th>Time</th>
           <th>Event</th>
-          
+          <!--more events....-->
         </tr>
         <!--tr>
           <td>9-10:00</td>
@@ -29,7 +30,7 @@
       </table>
     
       <br> <!--Line Break for spacing-->
-    <h4 id = "allDayEvent">All Day Events</h3>
+    <h4 id = "allDayEvent">All Day Events</h3> <!--Adding any all day events with a bullet point list-->
       <hr class="hrEventLine">
       <ul id = allDayEventList>
         <!--Room for all day events in bullet points-->
@@ -41,6 +42,7 @@
       
   </div>
 
+  <!--Month Event Table for the Scheduler -->
   <div id="month" class="schedTabcontent">
     <table id = monthSched>
         <tr>
@@ -54,6 +56,7 @@
       <br>
       <button class="exportButton" id="export" type="button">Export</button>
   </div>
+  <!--Year Event Table for the Scheduler-->
 
   <div id="year" class="schedTabcontent">
     <table id = yearSched>
@@ -70,6 +73,7 @@
   </div> 
 
 </div>
+<!--Calendar date form to let the user pick which day is on their schedule-->
 <div class="calForm">
   <form action="/action_page.php"> <!--This may need to be changed to get info from the form-->
     <label for="schedDate">Select Date: </label>
@@ -88,6 +92,7 @@
   <button class="newClassButton" onclick="openRemoveEventForm()" id="removeEvent" type="button">Remove Class or Event</button>
 </div>
 
+<!--The Add event popup-->
 <div class="addEventPopup">
   <div class="addEventFormPopup" id="addEventForm">
     <form action="/action_page.php" class="addEventFormContainer">
@@ -97,17 +102,17 @@
       <label for="newEventDate">
         <strong>Select Date: </strong>
       </label>
-      <input type="date" id="newEventDate" name="newEventDate" required>
+      <input type="date" id="newEventDate" name="newEventDate" required> <!--The date of the user's chosen event-->
 
       <br>
       <label for="eventName">
-        <strong>Event Name</strong>
+        <strong>Event Name</strong> <!--Name of the event-->
       </label>
       <input type="text" id="eventName" placeholder="Event Name" name="eventName" required>
       
       <br>
       <!--Radio button for selecting all day event-->
-      <input class = "allDayEvent" type="checkbox" id="allDayEvent" name="allDayEvent" value="All Day Event" ">
+      <input class = "allDayEvent" type="checkbox" id="allDayEvent" name="allDayEvent" value="All Day Event" "> 
       <label for="allDayEvent">All Day Event</label><br>
 
       <br>
@@ -151,7 +156,7 @@
     </div>
 </div>
 
-<!--beginning of new pop up code-->
+<!--beginning of remove event pop up code-->
 <div class="removeEventPopup">
   <div class="removeEventFormPopup" id="removeEventForm">
     <form action="/action_page.php" class="removeEventFormContainer">

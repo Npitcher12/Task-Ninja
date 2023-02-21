@@ -4,6 +4,14 @@
 <body>
   <%- include("../partials/nav.ejs") %>
 
+  <div class="timerContainer">
+    <label id="timeLabel" for="time">
+      <strong>Timer</strong>
+    </label>
+    <div id="time" class="timer">00:00:00</div>
+    <button id="startTimer">Start</button>
+  </div>
+
   <div class="blogs content">
     <h2>All Tasks</h2>
 
@@ -19,7 +27,71 @@
     <% } %>
     
   </div>
+  
 
   <%- include("../partials/footer.ejs") %>
 </body>
 </html>
+
+<style>
+  .timerContainer {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    float: right;
+  }
+</style>
+
+<script>
+  let seconds = 0;
+  let minutes = 0;
+  let hours = 0;
+  let click = 0;
+  let timer;
+
+  function startTimer() {
+    timer = setInterval(function() {
+      seconds++;
+      if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+      }
+      if (minutes === 60) {
+        minutes = 0;
+        hours++;
+      }
+      document.getElementById("time").innerHTML = padZero(hours) + ":" + padZero(minutes) + ":" + padZero(seconds);
+    }, 1000);
+  }
+
+  function padZero(num) {
+    return num < 10 ? "0" + num : num;
+  }
+
+  function stopTimer() {
+    clearInterval(timer);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    document.getElementById("time").innerHTML = "00:00:00";
+  }
+  $("#startTimer").click(function() {
+    if (click === 0) {
+      startTimer();
+      $("#startTimer").text("Stop");
+      click++;
+    } else if (click === 1) {
+      stopTimer();
+      $("#startTimer").text("Reset");
+      click++;
+    } else if (click === 2) {
+      resetTimer();
+      $("#startTimer").text("Start");
+      click = 0;
+    }
+  });
+</script>

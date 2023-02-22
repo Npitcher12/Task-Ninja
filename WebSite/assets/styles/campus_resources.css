@@ -1,0 +1,36 @@
+h1{
+    text-align: center;
+}
+
+.calendarC{
+    padding:25px;
+}
+#calC{
+    display:block;
+    margin:auto;
+    
+}
+#textHeadingC{
+    padding-top:20px;
+}
+
+.HAM, .BHD, .CWC, .HO, .WF, .FF, .FW, .RC{
+    padding: 20px;
+    float: left;
+}
+.hamText, .BHDtext, .CWCtext, .HOtext, .WFtext, .FFtext, .FWtext, .RCtext{
+    float: left;
+    width: 50%
+}
+#HAMhead, #BHDhead, #CWChead, #HOhead, #WFhead, #FFhead, #FWhead, #RChead{
+    display: inline-block;
+    padding-top: 15px;
+}
+#HAMp, #BHDp, #CWCp, #HOp, #WFp, #FFp, #FWp, #RCp{
+    display: inline-block;
+}
+
+#HAMmap, #BHDmap, #CWCmap, #HOmap, #WFmap, #FFmap, #FWmap, #RCmap{
+    float: right;
+    padding:10px;
+}

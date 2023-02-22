@@ -33,9 +33,6 @@ module.exports.routes = {
   '/campus_resources': { view: 'pages/campus_resources'},
   '/academic_resources': { view: 'pages/academic_resources'},
   '/test': { view: 'pages/test'},
-
-
-
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

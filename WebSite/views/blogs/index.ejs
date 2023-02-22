@@ -1,36 +1,96 @@
 <html lang="en">
-<%- include("../partials/head.ejs") %>
 
-<body>
-  <%- include("../partials/nav.ejs") %>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Ninja | <%= title %></title>
+    <link rel ="stylesheet" href="/styles.css">
 
-  <div class="timerContainer">
-    <label id="timeLabel" for="time">
-      <strong>Timer</strong>
-    </label>
-    <div id="time" class="timer">00:00:00</div>
-    <button id="startTimer">Start</button>
-  </div>
+    <style type="text/css">
+      .imageSlider {
+          margin: auto;
+          width: 58%;
+          border: 10px solid #0d6efd;
+          padding: 20px;
+          }
+    </style>
+  </head>
 
-  <div class="blogs content">
-    <h2>All Tasks</h2>
+  <body>
 
-    <% if (blogs.length > 0) { %>
-      <% blogs.forEach(blog => { %>
-        <a class="single" href="/blogs/<%= blog.id %>">
-          <h3 class="title"><%= blog.title %></h3>
-          <p class="snippet"><%= blog.snippet %></p>
-        </a>
-      <% }) %>
-    <% } else { %>
-      <p>There are no tasks to display...</p>
-    <% } %>
-    
-  </div>
-  
+    <%- include("../partials/nav.ejs") %>
 
+    <div class="timerContainer">
+      <label id="timeLabel" for="time">
+        <strong>Timer</strong>
+      </label>
+      <div id="time" class="timer">00:00:00</div>
+      <button id="startTimer">Start</button>
+    </div>
+
+    <div class="blogs content">
+      <h2>All Tasks</h2>
+
+      <% if (blogs.length > 0) { %>
+        <% blogs.forEach(blog => { %>
+          <a class="single" href="/blogs/<%= blog.id %>">
+            <h3 class="title"><%= blog.title %></h3>
+            <p class="snippet"><%= blog.snippet %></p>
+          </a>
+        <% }) %>
+      <% } else { %>
+        <p>There are no tasks to display...</p>
+      <% } %>
+      
+    </div>
+
+    <hr>
+
+    <!-- Meme List Start-->
+    <br>
+    <div class="imageSlider">
+      <img name="slide" width="600" height="400" />
+    </div>
+
+    <script type="text/javascript">
+      var i = 0; 			// Start Point
+      var images = [];	// Images Array
+      var time = 6000;	// Time Between Switch
+          
+      // Image List
+      images[0] = "/images/image/image1.jpg";
+      images[1] = "/images/image/image2.jpg";
+      images[2] = "/images/image/image3.jpg";
+      images[3] = "/images/image/image4.jpg";
+      images[4] = "/images/image/image5.jpeg";
+      images[5] = "/images/image/image6.jpeg";
+      images[6] = "/images/image/image7.jpg";
+      images[7] = "/images/image/image9.jpg";
+      images[8] = "/images/image/image10.jpg";
+
+      // Change Image
+      function changeImg(){
+          document.slide.src = images[i];
+
+          // Check If Index Is Under Max
+          if(i < images.length - 1){
+          // Add 1 to Index
+          i++; 
+          } else { 
+              // Reset Back To O
+              i = 0;
+          }
+
+          // Run function every x seconds
+          setTimeout("changeImg()", time);
+      }
+
+      // Run function when page loads
+      window.onload=changeImg;
+  </script>
+  <!-- Meme List End-->
   <%- include("../partials/footer.ejs") %>
-</body>
+  </body>
 </html>
 
 <style>

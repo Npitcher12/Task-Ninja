@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+}
+body{
+    background-color: #f9f9f9;
+}
+.schedBox{
+   /* box-sizing: border-box;*/
+    display: flex;
+    flex-direction: column; 
+    width: 60%;
+    float: left;
+    
+
+}
+body {font-family: arial, sans-serif;}
+
+
+/* Style the tab */
+.schedTab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #0000FF;
+}
+
+
+/* Style the buttons inside the tab */
+.schedTab button {
+  background-color: #0000FF;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.exportButton{
+  background-color: #0000FF;
+  border:#0000FF;
+  color: white;
+  border: none;
+  outline: none;
+  float: right;
+  cursor: pointer;
+  padding: 5px 5px;
+}
+
+
+/* Change background color of buttons on hover */
+.schedTab button:hover {
+    background-color: #00269b;
+  }
+  
+  
+  /* Create an active/current "tab button" class */
+  .schedTab button.active {
+    background-color: #00269b;
+  }
+  
+  
+  /* Style the schedule tab content */
+  .schedTabcontent {
+    display: flex;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #f7fbfd;
+    height: 300px;
+  }
+  
+  
+  table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width:100%;
+     
+    }
+
+
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    width:50%;
+    font-size: 18px;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    width:50%;
+    font-size: 15px;
+}
+   
+
+  
+.hrEventLine{
+    position: relative;
+  /*  left: -15px; */
+    width: 100%; 
+    
+    /*border: 2px solid blue;*/
+}
+
+.calForm { /*styling for the calendar form*/
+    padding-top: 50px;
+    padding-right: 20px;
+
+    float: right;
+  }
+
+input[type=submit]{
+    background-color: #00269b;
+    color: white;
+    cursor: pointer;
+    
+  }
+
+.newClassButton{
+    background-color: #00269b;
+    border:#00269b;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    padding: 15px 32px;
+}
+
+/*New Stuff*/
+.addEventPopup {
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+.addEventFormPopup {
+  display: none;
+  position: fixed; 
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #0000FF;
+  z-index: 9;
+}
+.addEventFormContainer {
+ /* max-width: 300px;*/
+  padding: 20px;
+  background-color: #fff;
+
+
+}
+
+.addEventFormContainer input[type=text] {
+  width: 50%;
+  padding: 15px;
+  margin: 10px;
+  border: none;
+  background: #eee;
+}
+
+.addEventFormContainer input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+.eventFormContainer .btn:hover,
+.openButton:hover {
+  opacity: 1;
+}
+
+.radioButtonAlign{
+  vertical-align: middle;
+}
+
+.eventTime{
+  position: relative;
+}
+
+.endButton{
+  background-color: #0000FF;
+  border:#0000FF;
+  color: white;
+  border-color: white;
+  outline: solid;
+  float: right;
+  cursor: pointer;
+  padding: 5px 5px;
+}
+
+/*beginning of remove event form formatting*/
+.removeEventPopup {
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+.removeEventFormPopup {
+  display: none;
+  position: fixed; 
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #0000FF;
+  z-index: 9;
+}
+.removeEventFormContainer {
+ /* max-width: 300px;*/
+  padding: 20px;
+  background-color: #fff;
+
+
+}
+
+.removeEventFormContainer input[type=text] {
+  width: 50%;
+  padding: 15px;
+  margin: 10px;
+  border: none;
+  background: #eee;
+}
+
+.removeEventFormContainer input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+.removeEventFormContainer .btn:hover,
+.openButton:hover {
+  opacity: 1;
+}

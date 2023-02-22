@@ -1,0 +1,35 @@
+h1{
+    text-align: center;
+}
+
+.calendarA{
+    padding:25px;
+}
+#calA{
+    display:block;
+    margin:auto;
+}
+#textHeadingA{
+    padding-top:20px;
+}
+
+.SSC, .START, .CEO, .LIB, .QRC, .WRC{
+    padding: 20px;
+    float: left;
+}
+.SCCtext, .STARTtext, .CEOtext, .LIBtext, .QRCtext, .WRCtext{
+    float: left;
+    width: 50%
+}
+#STARThead, #SSChead, #CEOhead, #LIBhead, #QRChead, #WRChead{
+    display: inline-block;
+    padding-top: 15px;
+}
+#STARTp, #SSCp, #CEOp, #LIBp, #QRCp, #WRCp{
+    display: inline-block;
+}
+
+#SSCmap, #STARTmap, #CEOmap, #LIBmap, #QRCmap, #WRCmap{
+    float: right;
+    padding:10px;
+}

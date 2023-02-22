@@ -32,6 +32,7 @@ module.exports.routes = {
   'DELETE /blogs/:id': { controller: 'BlogController', action: 'blog_delete' },
   '/campus_resources': { view: 'pages/campus_resources'},
   '/academic_resources': { view: 'pages/academic_resources'},
+  '/test': { view: 'pages/test'},
 
 
 

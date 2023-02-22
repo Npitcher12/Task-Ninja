@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Allan' rel='stylesheet'>
+    <style>
+    body {
+      font-family: 'Allan';font-size: 22px;
+      text-align: center;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Congratulations you found the easter egg!!!</h1>
+    <br>
+    <p>We cannot give you a magical wand that makes your life easier. </p>
+    <p>However, We know life can be tough sometimes but you are doing great! Keep going :)</p>
+    <p>Also, we know that you like the confetti effect on Canvas that you get once
+      you submit an assignment so here enjoy the confetti effect!
+    </p>
+
+    <script type="text/javascript" src="/confetti.js"></script>
+    <!-- Confetti  JS-->
+    <script>
+
+        // start
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+        };
+
+        //  Stop
+        const stop = () => {
+            setTimeout(function() {
+                confetti.stop()
+            }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+        };
+
+        start();
+        stop();
+    </script>
+
+  </body>
+</html>
+
+
